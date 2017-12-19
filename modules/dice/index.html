@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dice roll">
+    <meta name="keywords" content="dice, random">
+    <title>Dice</title>
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+            user-select: none;
+        }
+        table {
+            margin: 5% auto;
+            padding: 0;
+            width: 50vw;
+            height: 50vw;
+            max-height: 70vh;
+            max-width: 70vh;
+            border-collapse: collapse;
+            transform: rotate(0deg);
+            position: relative;
+            top: 0vh;
+            transition: top 0.15s ease;
+            user-select: none;
+        }
+        tr {
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+        }
+        td {
+            width: 33%;
+            height: 33%;
+            padding: 5%;
+            user-select: none;
+        }
+        .twist {
+            position: relative;
+            top: -2vh;
+            transform: rotate(180deg);
+            transition: transform 0.3s ease,
+            top 0.15s ease;
+        }
+        .circle {
+            border-radius: 50%;
+            background-color: rgba(0,39,96,0.4);
+            height: 100%;
+            user-select: none;
+        }
+        .center {
+            background: linear-gradient(to top, #1194d6, #8ce7f8);
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            user-select: none;
+        }
+        .hide {
+            visibility: hidden;
+        }
+        .footer {
+            font-family: sans-serif;
+            font-weight: 300;
+            position: absolute;
+            left: 30px;
+            bottom: 10px;
+            color: #6ebce3;
+            font-size: 50%;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function go() {
+            clean();
+            num = Math.ceil(Math.random()*6);
+            console.log(num);
+            switch(num) {
+                case 1: {
+                    tbl.rows[1].cells[1].innerHTML = "<div class='circle'></div>";
+                    break;
+                }
+                case 2: {
+                    tbl.rows[2].cells[0].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[0].cells[2].innerHTML = "<div class='circle'></div>";
+                    break;
+                }
+                case 3: {
+                    tbl.rows[2].cells[0].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[1].cells[1].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[0].cells[2].innerHTML = "<div class='circle'></div>";
+                    break;
+                }
+                case 4: {
+                    tbl.rows[0].cells[0].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[0].cells[2].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[2].cells[0].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[2].cells[2].innerHTML = "<div class='circle'></div>";
+                    break;
+                }
+                case 5: {
+                    tbl.rows[0].cells[0].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[0].cells[2].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[1].cells[1].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[2].cells[0].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[2].cells[2].innerHTML = "<div class='circle'></div>";
+                    break;
+                }
+                case 6: {
+                    tbl.rows[0].cells[0].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[0].cells[2].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[1].cells[0].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[1].cells[2].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[2].cells[0].innerHTML = "<div class='circle'></div>";
+                    tbl.rows[2].cells[2].innerHTML = "<div class='circle'></div>";
+                    break;
+                }
+            }
+        }
+        function clean() {
+            tbl.classList.toggle("twist");
+            tbl.rows[0].cells[0].innerHTML = "<div class='circle hide'>";
+            tbl.rows[0].cells[1].innerHTML = "<div class='circle hide'>";
+            tbl.rows[0].cells[2].innerHTML = "<div class='circle hide'>";
+            tbl.rows[1].cells[0].innerHTML = "<div class='circle hide'>";
+            tbl.rows[1].cells[1].innerHTML = "<div class='circle hide'>";
+            tbl.rows[1].cells[2].innerHTML = "<div class='circle hide'>";
+            tbl.rows[2].cells[0].innerHTML = "<div class='circle hide'>";
+            tbl.rows[2].cells[1].innerHTML = "<div class='circle hide'>";
+            tbl.rows[2].cells[2].innerHTML = "<div class='circle hide'>";
+            setTimeout(function() { tbl.classList.toggle("twist");},200);
+        }
+    </script>
+</head>
+<body onload="go()" onkeypress="go()" onclick="go()">
+<div class="center">
+    <table id="tbl">
+        <tr> <td></div></td><td></td><td></td> </tr>
+<tr> <td></td><td></td><td></td> </tr>
+<tr> <td></td><td></td><td></td> </tr>
+</table>
+</div>
+<!--<div class="footer">-->
+    <!--© Константин Уланов, 2017-->
+<!--</div>-->
+</body>
+</html>
