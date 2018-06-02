@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'ZooKeeper简介'
+date: 2017-03-23
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: ZooKeeper
+---
+
 ### ZooKeeper: A Distributed Coordination Service for Distributed Applications
 
 ZooKeeper是一种用于分布式应用的分布式开源协调服务。它公开了一组简单的原语，分布式应用程序可以在此基础上实现更高级别的服务，例如同步，配置维护，组和命名。它的目的是易于编程，并使用一种数据模型风格类似于文件系统的目录树结构。它是Java语言编写的，且提供Java和C的客户端。
@@ -72,11 +81,13 @@ ZooKeeper的设计目的之一是提供一个非常简单的编程接口。它�
 
 备份的数据库是包含整个数据树的内存数据库。将更新记录到磁盘以获取可恢复性，写操作会被序列化到磁盘，然后才应用到内存数据库。
 
-每个ZooKeeper服务器都为客户端服务。客户端连接到一个服务器以提交请求。读请求从每个服务器数据库的本地副本提供数据。更改服务状态、写请求由一致性协议进行处理。
+每个ZooKeeper服务器都为客户端服务。客户端连接到一个服务器以提交请求。读请求从每个服务器数据库的本地副本提供数据。更改服务状态、写请求由一致性协议进行处理。
+
 
 作为一致性协议的一部分，客户端的所有写请求都将转发到单个服务器，称为leader。其余服务器被称为follower，它们从leader处接受消息提议，并同意消息传递。消息层负责失败leader的更新换代，并使得follower同步新的leader。
 
-ZooKeeper使用自定义的原子消息协议。由于消息层是原子的，所以ZooKeeper可以保证本地副本不会发散。当leader收到写请求时，它会计算要应用写入时系统的状态，并将其转换为可描述此新状态的事务。
+
+ZooKeeper使用自定义的原子消息协议。由于消息层是原子的，所以ZooKeeper可以保证本地副本不会发散。当leader收到写请求时，它会计算要应用写入时系统的状态，并将其转换为可描述此新状态的事务。
 
 ### Uses
 

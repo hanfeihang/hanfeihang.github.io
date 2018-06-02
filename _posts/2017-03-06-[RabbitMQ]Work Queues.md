@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'RabbitMQ Work Queues'
+date: 2017-03-06
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: RabbitMQ
+---
+
 # 简介
 
 在第一个教程中，我们实现了一个程序进行发送和接受消息，在这一章节，我们将创建一个工作队列，用于在多个Workers之间分配耗时的任务。

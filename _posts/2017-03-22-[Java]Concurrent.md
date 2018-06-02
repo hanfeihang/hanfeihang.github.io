@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'Concurrent包简介'
+date: 2017-03-22
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: JAVA
+---
+
 # 简介
 
 Java 5新增了一个concurrent包。它包含了一系列类，能够让Java的并发（多线程）编程变得更加容易。在Java 5之前，你需要自己动手去实现相关工具类。

@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'SpringBoot类型安全的配置属性'
+date: 2017-10-25
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: SpringBoot
+---
+
 ## Type-safe Configuration Properties
 
 Using the`@Value("${property}")`annotation to inject configuration properties can sometimes be cumbersome, especially if you are working with multiple properties or your data is hierarchical in nature. Spring Boot provides an alternative method of working with properties that allows strongly typed beans to govern and validate the configuration of your application.

@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'RabbitMQ Consumer Acknowledgements and Publisher Confirms'
+date: 2017-03-08
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: RabbitMQ
+---
+
 ## 简介
 
 使用RabbitMQ这类消息中间件的系统往往是分布式的。由于被传递的消息不能确保达到节点或成功被处理，所以publicsher和consumer需要一个机制来保证投递和处理确认。RabbitMQ支持的一些消息协议提供了这些特性。本指导涵盖了AMQP 0-9-1中的特性，而其他协议（STOMP, MQTT等）也有相似的特性。

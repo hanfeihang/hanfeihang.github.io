@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'ThreadPoolExecutor简介'
+date: 2017-04-14
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: JAVA
+---
+
 #### 线程池优缺点
 
 与直接New Thread\(\)相比，线程池有如下优点：

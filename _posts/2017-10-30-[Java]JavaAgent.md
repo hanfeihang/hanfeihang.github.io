@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'Java Agent'
+date: 2017-10-30
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: JAVA
+---
+
 ### 简介
 
 JavaAgent 是JDK 1.5 以后引入的，也可以叫做Java代理。

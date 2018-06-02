@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'RabbitMQ Hello World'
+date: 2017-03-05
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: RabbitMQ
+---
+
 # 简介
 
 RabbitMQ是一个消息队列，主要目的是接收和发送消息。你可以将它简单的想象成一个邮局：当你将一个新建投递到一个邮箱时，你可以确保邮递员最终会将邮件送达你的收件人。RabbitMQ类似于邮箱、邮局和邮递员。

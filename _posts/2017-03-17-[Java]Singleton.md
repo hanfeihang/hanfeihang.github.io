@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'Singleton模式'
+date: 2017-03-17
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: JAVA
+---
+
 ## 简介
 
 单例模式确保某个类只有一个由自身创建的单一实例，且自行实例化并提供访问入口。

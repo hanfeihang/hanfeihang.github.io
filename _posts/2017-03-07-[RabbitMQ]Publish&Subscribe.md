@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'RabbitMQ Publish & Subscribe'
+date: 2017-03-07
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: RabbitMQ
+---
+
 # 简介
 
 在这个章节，我们将把一个消息发送给多个消费者，即发布订阅模型。

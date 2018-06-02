@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'RabbitMQ Topics'
+date: 2017-03-11
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: RabbitMQ
+---
+
 # 简介
 
 虽然我们通过使用direct交换机提升了日志系统，但它仍旧有限制，无法基于多个条件进行路由。

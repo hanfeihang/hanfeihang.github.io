@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'Java volatile'
+date: 2017-06-29
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: JAVA
+---
+
 #### 特性
 
 关键字volatile是Java提供的最轻量级的同步机制。当一个变量被volatile修饰后，它具备以下两个特性：

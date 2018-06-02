@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'RabbitMQ RPC'
+date: 2017-03-07
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: RabbitMQ
+---
+
 # 简介
 
 在RPC模式下，我们发送一个消息，并等待远程的服务的响应。

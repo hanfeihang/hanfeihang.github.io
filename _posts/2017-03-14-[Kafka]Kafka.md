@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'Kafka简介'
+date: 2017-03-14
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: Kafka
+---
+
 #### 简介
 
 Apache Kafka是一个分布式流平台。一个分布式流平台有以下特点：

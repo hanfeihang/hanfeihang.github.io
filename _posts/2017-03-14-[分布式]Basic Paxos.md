@@ -1,3 +1,12 @@
+---
+layout: post
+title: '分布式Basic Paxos'
+date: 2017-03-14
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: 分布式
+---
+
 ## 1背景
 
 Paxos算法由lamport大师提出，目标是解决分布式环境下数据一致性的问题。

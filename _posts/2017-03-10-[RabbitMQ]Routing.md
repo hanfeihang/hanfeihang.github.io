@@ -1,3 +1,12 @@
+---
+layout: post
+title: 'RabbitMQ Routing'
+date: 2017-03-10
+author: Feihang Han
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+tags: RabbitMQ
+---
+
 # 简介
 
 在这个章节中，我们新增一个特性——支持订阅消息的某个子集。比如我们可以把严重错误的日志记录到日志文件，而同时在屏幕上打印出所有日志。
