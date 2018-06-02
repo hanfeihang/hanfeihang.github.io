@@ -1,7 +1,6 @@
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-test.html
-test.js
+.DS_Store
+*/.DS_Store
+
+node_modules
+
+_site
