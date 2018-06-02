@@ -1,6 +1,7 @@
 ---
 layout: post
-date: 2017-01-16
+title: 'InnoDB的锁'
+date: 2017-01-22
 author: Feihang Han
 cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: MySQL
