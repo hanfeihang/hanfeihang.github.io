@@ -1,6 +1,6 @@
 # Site settings 配置站点
-title: 'Han Feihang的网络日志'
-description: '后端开发者，热爱编程、游戏、篮球。很高兴能在这里与你分享自己的思考。'
+title: "Feihang Han's Space"
+description: '后端开发者，热爱编程、游戏、篮球。很高兴能在这里与你分享。'
 keyword: ''
 url: 'http://hanfeihang.github.io' # your host
 
@@ -59,7 +59,7 @@ recommend-tags: true # whether or not display recommend-tags on the sidebar
 recommend-condition-size: 12 # a tag will be recommended if the size of it is more than this value
 
 # Build settings
-paginate: 6
+paginate: 10
 paginate_path: 'page:num'
 exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md']
 

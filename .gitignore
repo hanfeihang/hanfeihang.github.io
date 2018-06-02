@@ -1,6 +1,5 @@
 .DS_Store
 */.DS_Store
-
-node_modules
-
+.idea
 _site
+node_modules
