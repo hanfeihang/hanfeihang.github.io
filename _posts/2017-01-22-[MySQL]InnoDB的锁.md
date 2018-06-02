@@ -3,11 +3,10 @@ layout: post
 title: 'InnoDB的锁'
 date: 2017-01-22
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: MySQL
 ---
 
-#### 共享锁和排它锁\(Shared and Exclusive Locks\)
+# 共享锁和排它锁\(Shared and Exclusive Locks\)
 
 InnoDB实现了标准的行级锁，有两种类型：共享锁（S锁）和排它锁（X锁）。
 
@@ -15,7 +14,7 @@ InnoDB实现了标准的行级锁，有两种类型：共享锁（S锁）和排�
 
 * 排它锁：允许事务持有并更新或者删除一行记录。
 
-#### 意向锁\(Intention Locks\)
+# 意向锁\(Intention Locks\)
 
 InnoDB支持多粒度的锁，多粒度的锁允许行锁和表锁共存。为了在实际中实现多粒度的锁，使用了另外一种类型的锁：意向锁。在InnoDB中，意向锁是表级锁，它标明了一个事务将在表中行记录上使用锁的类型\(共享锁和排它锁\)。
 
@@ -25,13 +24,13 @@ InnoDB支持多粒度的锁，多粒度的锁允许行锁和表锁共存。为�
 
 * 意向排它锁\(IX\)：事务打算在该表的某些行设置T锁。事务获得该表某行的X锁之前，必须先获得该表上的IX锁。
 
-#### 记录锁\(Record Locks\)
+# 记录锁\(Record Locks\)
 
 记录锁是索引记录上的锁，锁定的是索引。
 
 在表没有定义索引的情况下，InnoDB会创建一个隐式的聚簇索引并将此索引用作记录锁。
 
-#### 间隙锁\(Gap Locks\)
+# 间隙锁\(Gap Locks\)
 
 间隙锁会锁定一个范围内的索引，或者是某索引记录之前或者之后的索引。
 
@@ -41,15 +40,15 @@ Innodb在RR级别下，以下情况下会使用间隙锁：
 
 * 在唯一索引/主键上使用范围搜索
 
-#### Next-Key锁\(Next-Key Locks\)
+# Next-Key锁\(Next-Key Locks\)
 
 Next-Key锁是索引记录上的记录锁与此索引记录之前间隙上的间隙锁两者的结合。
 
-#### 插入意向锁\(Insert Intention Locks\)
+# 插入意向锁\(Insert Intention Locks\)
 
 插入意向锁是在插入行前设置的一种间隙锁。这个锁示意如果多个事务感兴趣的不是索引区间中的同一个位置，则事务在同一个索引区间插入不需要相互等待。
 
-#### 自动增长锁\(AUTO-INC Locks\)
+# 自动增长锁\(AUTO-INC Locks\)
 
 自动增长锁是一个特殊的表级锁，事务持有它用于给带有`auto_increment`列的表插入数据。
 

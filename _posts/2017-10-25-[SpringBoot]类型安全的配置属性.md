@@ -3,11 +3,10 @@ layout: post
 title: 'SpringBoot类型安全的配置属性'
 date: 2017-10-25
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: SpringBoot
 ---
 
-## Type-safe Configuration Properties
+# Type-safe Configuration Properties
 
 Using the`@Value("${property}")`annotation to inject configuration properties can sometimes be cumbersome, especially if you are working with multiple properties or your data is hierarchical in nature. Spring Boot provides an alternative method of working with properties that allows strongly typed beans to govern and validate the configuration of your application.
 
@@ -129,7 +128,7 @@ public class MyService {
 
 > Using`@ConfigurationProperties`also allows you to generate meta-data files that can be used by IDEs to offer auto-completion for your own keys, see the[Appendix B,Configuration meta-data](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#configuration-metadata)appendix for details. |
 
-### 24.7.1 Third-party configuration
+# 24.7.1 Third-party configuration
 
 As well as using`@ConfigurationProperties`to annotate a class, you can also use it on public`@Bean`methods. This can be particularly useful when you want to bind properties to third-party components that are outside of your control.
 
@@ -146,7 +145,7 @@ public
 
 Any property defined with the`bar`prefix will be mapped onto that`BarComponent`bean in a similar manner as the`FooProperties`example above.
 
-### 24.7.2 Relaxed binding
+# 24.7.2 Relaxed binding
 
 Spring Boot uses some relaxed rules for binding`Environment`properties to`@ConfigurationProperties`beans, so there doesn’t need to be an exact match between the`Environment`property name and the bean property name. Common examples where this is useful include dashed separated \(e.g.`context-path`binds to`contextPath`\), and capitalized \(e.g.`PORT`binds to`port`\) environment properties.
 
@@ -180,13 +179,13 @@ The following properties names can all be used:
 | `person.first_name` | Underscore notation, alternative format for use in`.properties`and`.yml`files. |
 | `PERSON_FIRST_NAME` | Upper case format. Recommended when using a system environment variables. |
 
-### 24.7.3 Properties conversion
+# 24.7.3 Properties conversion
 
 Spring will attempt to coerce the external application properties to the right type when it binds to the`@ConfigurationProperties`beans. If you need custom type conversion you can provide a`ConversionService`bean \(with bean id`conversionService`\) or custom property editors \(via a`CustomEditorConfigurer`bean\) or custom`Converters`\(with bean definitions annotated as`@ConfigurationPropertiesBinding`\).
 
 > As this bean is requested very early during the application lifecycle, make sure to limit the dependencies that your`ConversionService`is using. Typically, any dependency that you require may not be fully initialized at creation time. You may want to rename your custom`ConversionService`if it’s not required for configuration keys coercion and only rely on custom converters qualified with`@ConfigurationPropertiesBinding`. |
 
-### 24.7.4 @ConfigurationProperties Validation
+# 24.7.4 @ConfigurationProperties Validation
 
 Spring Boot will attempt to validate`@ConfigurationProperties`classes whenever they are annotated with Spring’s`@Validated`annotation. You can use JSR-303`javax.validation`constraint annotations directly on your configuration class. Simply ensure that a compliant JSR-303 implementation is on your classpath, then add constraint annotations to your fields:
 
@@ -234,7 +233,7 @@ You can also add a custom Spring`Validator`by creating a bean definition called`
 
 > The`spring-boot-actuator`module includes an endpoint that exposes all`@ConfigurationProperties`beans. Simply point your web browser to`/configprops`or use the equivalent JMX endpoint. See the[_Production ready features_](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-endpoints). section for details. |
 
-### 24.7.5 @ConfigurationProperties vs. @Value
+# 24.7.5 @ConfigurationProperties vs. @Value
 
 `@Value`is a core container feature and it does not provide the same features as type-safe Configuration Properties. The table below summarizes the features that are supported by`@ConfigurationProperties`and`@Value`:
 

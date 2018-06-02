@@ -1,9 +1,8 @@
 ---
 layout: post
-title: 'RabbitMQ Work Queues'
+title: '[RabbitMQ] Work Queues'
 date: 2017-03-06
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: RabbitMQ
 ---
 

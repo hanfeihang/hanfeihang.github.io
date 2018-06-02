@@ -3,7 +3,6 @@ layout: post
 title: 'Concurrent包简介'
 date: 2017-03-22
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: JAVA
 ---
 
@@ -189,7 +188,7 @@ ScheduledExecutorService接口继承于ExecutorService接口。能够将任务�
 
 * ScheduledThreadPoolExecutor
 
-## ForkJoinPool
+# ForkJoinPool
 
 ForkJoinPool 在 Java 7 中被引入。它和ExecutorService很相似，除了一点不同。ForkJoinPool 让我们可以很方便地把任务分裂成几个更小的任务，这些分裂出来的任务也将会提交给 ForkJoinPool。
 

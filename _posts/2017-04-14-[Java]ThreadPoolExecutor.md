@@ -3,11 +3,10 @@ layout: post
 title: 'ThreadPoolExecutor简介'
 date: 2017-04-14
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: JAVA
 ---
 
-#### 线程池优缺点
+# 线程池优缺点
 
 与直接New Thread\(\)相比，线程池有如下优点：
 
@@ -15,7 +14,7 @@ tags: JAVA
 * 可有效控制最大并发线程数，提高系统资源的使用率，同时避免过多资源竞争，避免堵塞。
 * 提供定时执行、定期执行、单线程、并发数控制等功能。
 
-#### 实现
+# 实现
 
 Java线程池的底层都是基于ThreadPoolExecutor实现的。
 
@@ -63,7 +62,7 @@ public ThreadPoolExecutor(int corePoolSize,
        because the thread bounds and queue capacities are reached
 ```
 
-#### 关
+# 关
 
 键属性
 
@@ -87,7 +86,7 @@ public ThreadPoolExecutor(int corePoolSize,
 
 > 当线程池满了后，拒绝新线程的处理器。
 
-#### 拒绝策略
+# 拒绝策略
 
 目前JDK7自带实现了以下几种拒绝策略的RejectedExecutionHandler
 
@@ -97,7 +96,7 @@ public ThreadPoolExecutor(int corePoolSize,
 * DiscardOldestPolicy：丢弃workQueue中最老的一个线程，并execute该线程。如果线程池被shut down，在这种情况下，该线程会被丢弃。
 * DiscardPolicy：直接丢弃该线程。
 
-#### 线程池
+# 线程池
 
 * newFixedThreadPool
 

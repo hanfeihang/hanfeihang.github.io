@@ -3,17 +3,14 @@ layout: post
 title: 'Java Agent'
 date: 2017-10-30
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: JAVA
 ---
 
-### 简介
 
-JavaAgent 是JDK 1.5 以后引入的，也可以叫做Java代理。
+JavaAgent是JDK1.5以后引入的，也可以叫做Java代理。
+JavaAgent运行在main方法之前的拦截器，它内定的方法名叫 premain ，也就是说先执行premain方法然后再执行main方法。
 
-JavaAgent 是运行在 main方法之前的拦截器，它内定的方法名叫 premain ，也就是说先执行 premain 方法然后再执行 main 方法。
-
-### 实现
+# 实现
 
 1、实现premain的类
 
@@ -71,7 +68,7 @@ MyAgent
 
 4、打包代码为 MyAgent.jar。注意打包的时候选择我们自己定义的 MANIFEST.MF。
 
-### 检验
+# 检验
 
 1、新建项目Test，编写main类
 
@@ -132,7 +129,7 @@ Hello2
 xyz
 ```
 
-### 现实应用
+# 现实应用
 
 基于 JavaAgent 的 spring-loaded 实现 jar 包的热更新。
 

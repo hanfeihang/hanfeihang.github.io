@@ -1,19 +1,18 @@
 ---
 layout: post
 title: 'Singleton模式'
-date: 2017-03-17
+date: 2017-03-18
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: JAVA
 ---
 
-## 简介
+# 简介
 
 单例模式确保某个类只有一个由自身创建的单一实例，且自行实例化并提供访问入口。
 
-## 实现
+# 实现
 
-#### 懒汉式单例
+# 懒汉式单例
 
 ```
 public class LazySingleton {
@@ -58,7 +57,7 @@ public class ReflectSingleton {
 
 使用synchronized关键字修饰getInstance\(\)，可以较为简单的使得单例类变成线程安全。
 
-#### 双重检查锁定
+# 双重检查锁定
 
 使用synchronized关键字，锁定的是整个类对象，会对性能造成较大的影响。
 
@@ -95,7 +94,7 @@ public class DoubleCheckSingleton {
 在JAVA1.4及以前的版本，很多JVM对该关键字的实现有问题，慎用。建议在JAVA1.5之后使用。
 ```
 
-#### 双检锁问题
+# 双检锁问题
 
 由于instance = new Singleton\(\);这行代码在不同编译器上的行为是无法预知的。
 
@@ -114,7 +113,7 @@ public class DoubleCheckSingleton {
 
 如果编译器的行为是这样的话我们似乎就没有问题了，但事实却不是那么简单，因为我们无法知道某个编译器具体是怎么做的，因为在Java的memory model里对这个问题没有定义。
 
-#### 静态（类级）内部类
+# 静态（类级）内部类
 
 ```
 public class StaticInnerClassSingleton {
@@ -137,7 +136,7 @@ public class StaticInnerClassSingleton {
 
 当getInstance\(\)第一次被调用的时候，JVM第一次读取SingletonHolder.instance类，导致类SingletonHolder被初始化；类SingletonHolder初始化时，JVM会初始化它的静态变量，从而创建实例。由于是静态域，JVM只会在装载类的时候初始化一次，保证了其线程安全性。
 
-#### 饿汉式单例
+# 饿汉式单例
 
 ```
 public class EagerSingleton {
@@ -156,7 +155,7 @@ public class EagerSingleton {
 
 饿汉式单例在类创建时就初始化好了实例，天生是线程安全的。
 
-#### 枚举
+# 枚举
 
 ```
 public enum SingletonEnum {

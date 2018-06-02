@@ -1,9 +1,8 @@
 ---
 layout: post
-title: 'RabbitMQ Publish & Subscribe'
+title: '[RabbitMQ] Publish & Subscribe'
 date: 2017-03-07
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: RabbitMQ
 ---
 

@@ -1,9 +1,8 @@
 ---
 layout: post
-title: 'RabbitMQ RPC'
-date: 2017-03-07
+title: '[RabbitMQ] RPC'
+date: 2017-03-08
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: RabbitMQ
 ---
 

@@ -1,9 +1,8 @@
 ---
 layout: post
-title: 'RabbitMQ Hello World'
+title: '[RabbitMQ] Hello World'
 date: 2017-03-05
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: RabbitMQ
 ---
 

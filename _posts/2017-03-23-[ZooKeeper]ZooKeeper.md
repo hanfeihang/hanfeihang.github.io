@@ -3,17 +3,16 @@ layout: post
 title: 'ZooKeeper简介'
 date: 2017-03-23
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: ZooKeeper
 ---
 
-### ZooKeeper: A Distributed Coordination Service for Distributed Applications
+# ZooKeeper: A Distributed Coordination Service for Distributed Applications
 
 ZooKeeper是一种用于分布式应用的分布式开源协调服务。它公开了一组简单的原语，分布式应用程序可以在此基础上实现更高级别的服务，例如同步，配置维护，组和命名。它的目的是易于编程，并使用一种数据模型风格类似于文件系统的目录树结构。它是Java语言编写的，且提供Java和C的客户端。
 
 总所周知，协调服务很难取得正确的值。它们特别容易出现竞争条件和死锁。ZooKeeper的目的是减少开发分布式应用的责任，避免其从零开始发开一套协调服务。
 
-### Design Goals
+# Design Goals
 
 **ZooKeeper是简单的。**ZooKeeper允许分布式进程相互协调，通过共享一个类似于标准的文件系统的层次命名空间。命名空间包含数据寄存器，称为znodes。这些znodes类似于文件和目录。不像一个典型的文件系统，这是专为存储而设计的。ZooKeeper的数据是保存在内存中，也就是说，可以实现高吞吐量和低延迟。
 
@@ -31,13 +30,13 @@ ZooKeeper是有序的。ZooKeeper通过一个反映ZooKeeper事务顺序的数�
 
 ZooKeeper是很快的。这主要体现在“读取主导”的工作负载。ZooKeeper应用程序运行在数千台机器，它表现的最好的场景是读写比在10:1左右。
 
-### Data model and the hierarchical namespace
+# Data model and the hierarchical namespace
 
 ZooKeeper提供的命名空间与标准文件系统极其相似。名字是路径元素组成的序列，以斜杠"/"分隔。每一个ZooKeeper命名空间中的节点由一个路径进行标识。
 
 ![](http://zookeeper.apache.org/doc/current/images/zknamespace.jpg)
 
-### Nodes and ephemeral nodes
+# Nodes and ephemeral nodes
 
 不同于标准文件系统，ZooKeeper命名空间中的每个节点都有与它相关的数据以及子节点。这就像有一个文件系统，允许一个文件也可以是一个目录。（ZooKeeper是用来储存协调数据：状态信息、配置、位置信息等，使数据存储在每个节点通常是很小的，在字节范围。）我们使用术语znode来代表我们谈论的是ZooKeeper数据节点。
 
@@ -47,11 +46,11 @@ znodes保持数据结构（包括数据修改、ACL变化、时间戳的版本�
 
 ZooKeeper也有临时节点的概念。这些znodes与创建它们的会话共存亡。当会话结束，znode会被删除。
 
-### Conditional updates and watches
+# Conditional updates and watches
 
 ZooKeeper支持watch的概念。客户端可以针对一个znodes设置watch。当znode的变化时，watch会被触发并删除。当watch被触发，客户端接收到一个信息说znode已改变。如果客户端和一个ZooKeeper服务器之间的连接被破坏，客户端将收到一个本地通知。
 
-### Guarantees
+# Guarantees
 
 ZooKeeper非常的快且简单。由于它的目标是成为一个用于建设更复杂服务的基础，如同步，它提供了一套保证。如下：
 
@@ -61,7 +60,7 @@ ZooKeeper非常的快且简单。由于它的目标是成为一个用于建设�
 * 可靠性：一旦更新被应用，它将被持久化，直到客户端来修改它。
 * 及时性：系统的客户端视图在一定的时间范围内保证是最新的。
 
-### Simple API
+# Simple API
 
 ZooKeeper的设计目的之一是提供一个非常简单的编程接口。它提供如下操作：
 
@@ -73,7 +72,7 @@ ZooKeeper的设计目的之一是提供一个非常简单的编程接口。它�
 * get children：查询一个节点的子节点
 * sync：等待数据被传播
 
-### Implementation
+# Implementation
 
 下图显示了ZooKeeper服务的高层组件。除了Request Processor ，其他组成ZooKeeper的每个服务器都会复制其每个组件的副本。
 
@@ -89,15 +88,15 @@ ZooKeeper的设计目的之一是提供一个非常简单的编程接口。它�
 
 ZooKeeper使用自定义的原子消息协议。由于消息层是原子的，所以ZooKeeper可以保证本地副本不会发散。当leader收到写请求时，它会计算要应用写入时系统的状态，并将其转换为可描述此新状态的事务。
 
-### Uses
+# Uses
 
 ZooKeeper的编程接口是故意简单的。有了它，你可以实现更高层次的操作，如同步原语，组成员，所有权等。
 
-### Performance
+# Performance
 
 ZooKeeper是专为高性能设计的。 ZooKeeper在Yahoo! Research的开发团队的结果表明它确实如此。在读取超出数量写入的应用程序中，这是特别高的性能，因为写入涉及同步所有服务器的状态。（协调服务通常情况下读取数量超过写入次数。）
 
-### 参考
+# 参考
 
 [http://zookeeper.apache.org/doc/current/zookeeperOver.html](http://zookeeper.apache.org/doc/current/zookeeperOver.html)
 

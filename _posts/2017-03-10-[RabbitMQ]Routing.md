@@ -1,9 +1,8 @@
 ---
 layout: post
-title: 'RabbitMQ Routing'
+title: '[RabbitMQ] Routing'
 date: 2017-03-10
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: RabbitMQ
 ---
 

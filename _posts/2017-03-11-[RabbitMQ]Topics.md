@@ -1,9 +1,8 @@
 ---
 layout: post
-title: 'RabbitMQ Topics'
+title: '[RabbitMQ] Topics'
 date: 2017-03-11
 author: Feihang Han
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: RabbitMQ
 ---
 
