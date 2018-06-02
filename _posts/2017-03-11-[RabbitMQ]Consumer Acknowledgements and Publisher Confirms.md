@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '[RabbitMQ] Consumer Acknowledgements and Publisher Confirms'
-date: 2017-03-09
+date: 2017-03-11
 author: Feihang Han
 tags: RabbitMQ
 ---

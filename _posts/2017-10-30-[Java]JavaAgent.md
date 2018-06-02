@@ -6,7 +6,6 @@ author: Feihang Han
 tags: JAVA
 ---
 
-
 JavaAgent是JDK1.5以后引入的，也可以叫做Java代理。
 JavaAgent运行在main方法之前的拦截器，它内定的方法名叫 premain ，也就是说先执行premain方法然后再执行main方法。
 

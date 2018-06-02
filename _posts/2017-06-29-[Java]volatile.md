@@ -6,8 +6,6 @@ author: Feihang Han
 tags: JAVA
 ---
 
-# 特性
-
 关键字volatile是Java提供的最轻量级的同步机制。当一个变量被volatile修饰后，它具备以下两个特性：
 
 * 线程可见性：当一个线程修改了被volatile修饰的变量后，无论是否加锁，其他线程都可以立即看到最新的修改，而普通变量却做不到这点。

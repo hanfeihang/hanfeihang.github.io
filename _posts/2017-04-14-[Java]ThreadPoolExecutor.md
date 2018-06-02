@@ -62,9 +62,7 @@ public ThreadPoolExecutor(int corePoolSize,
        because the thread bounds and queue capacities are reached
 ```
 
-# 关
-
-键属性
+# 关键属性
 
 * corePoolSize/maximumPoolSize
 

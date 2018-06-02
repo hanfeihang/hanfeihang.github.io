@@ -6,8 +6,6 @@ author: Feihang Han
 tags: Kafka
 ---
 
-# 简介
-
 Apache Kafka是一个分布式流平台。一个分布式流平台有以下特点：
 
 1. 它可以发布订阅记录流。类似于消息队列或者企业消息总线。

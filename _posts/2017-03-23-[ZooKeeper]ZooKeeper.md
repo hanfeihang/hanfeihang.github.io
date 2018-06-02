@@ -6,8 +6,6 @@ author: Feihang Han
 tags: ZooKeeper
 ---
 
-# ZooKeeper: A Distributed Coordination Service for Distributed Applications
-
 ZooKeeper是一种用于分布式应用的分布式开源协调服务。它公开了一组简单的原语，分布式应用程序可以在此基础上实现更高级别的服务，例如同步，配置维护，组和命名。它的目的是易于编程，并使用一种数据模型风格类似于文件系统的目录树结构。它是Java语言编写的，且提供Java和C的客户端。
 
 总所周知，协调服务很难取得正确的值。它们特别容易出现竞争条件和死锁。ZooKeeper的目的是减少开发分布式应用的责任，避免其从零开始发开一套协调服务。

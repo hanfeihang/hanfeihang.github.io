@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '[RabbitMQ] Routing'
-date: 2017-03-10
+date: 2017-03-08
 author: Feihang Han
 tags: RabbitMQ
 ---
