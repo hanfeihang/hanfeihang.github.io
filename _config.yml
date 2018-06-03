@@ -19,7 +19,7 @@ footer:
 # Author 配置博主信息
 author: 'Feihang Han'
 nickname: ''
-bio: ''
+bio: '程序员'
 avatar: '/assets/img/profile.png'
 
 # Search
@@ -61,7 +61,7 @@ recommend-condition-size: 12 # a tag will be recommended if the size of it is mo
 # Build settings
 paginate: 10
 paginate_path: 'page:num'
-exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md']
+exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md', 'attach', 'games']
 
 # Markdown
 markdown: kramdown
