@@ -11,7 +11,7 @@ baseurl: ''
 nav:
   home: '/'
   tags: '/tags.html'
-  games: '/games/index.html'
+  games: '/games'
 
 # Footer
 footer:
