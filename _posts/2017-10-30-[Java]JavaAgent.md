@@ -53,7 +53,7 @@ Can-Redefine-Classes: true
 
 3、最终项目路径为
 
-```
+```bash
 MyAgent
 └── src
     ├── META-INF
@@ -96,7 +96,7 @@ Main-Class: com.github.hfh.test.Test
 
 3、最终项目路径如下
 
-```
+```bash
 Test
 ├── Test.iml
 └── src
@@ -119,7 +119,7 @@ java -javaagent:./MyAgent.jar=Hello -javaagent:./MyAgent.jar=World -jar Test.jar
 
 6、显示
 
-```
+```bash
 ===pre main===
 Hello1
 ===pre main===
