@@ -121,9 +121,9 @@ java -javaagent:./MyAgent.jar=Hello -javaagent:./MyAgent.jar=World -jar Test.jar
 
 ```bash
 ===pre main===
-Hello1
+Hello
 ===pre main===
-Hello2
+World
 ===main class===
 xyz
 ```
