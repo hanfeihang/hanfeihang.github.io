@@ -71,7 +71,7 @@ MyAgent
 
 1、新建项目Test，编写main类
 
-```
+```java
 package com.github.hfh.test;
 
 import java.util.Arrays;
@@ -113,7 +113,7 @@ Test
 
 5、将MyAgent.jar和Test.jar放到一个目录，执行
 
-```
+```shell
 java -javaagent:./MyAgent.jar=Hello -javaagent:./MyAgent.jar=World -jar Test.jar xyz
 ```
 
