@@ -13,7 +13,7 @@ JavaAgent运行在main方法之前的拦截器，它内定的方法名叫 premai
 
 1、实现premain的类
 
-```
+```java
 package com.github.hfh.agent;
 
 import java.lang.instrument.Instrumentation;
