@@ -10,7 +10,7 @@ tags: 微信小程序
 
 自从2017年5月上线以来，截止目前已累计22k用户。
 
-![pic1](https://raw.githubusercontent.com/hanfeihang/wx-chest-tracer/master/doc/ui_1.jpg)
+![pic1](https://raw.githubusercontent.com/hanfeihang/wx-chest-tracer/master/doc/ui_1.png)![pic1](https://raw.githubusercontent.com/hanfeihang/wx-chest-tracer/master/doc/ui_2.png)
 
 # 如何使用?
 
