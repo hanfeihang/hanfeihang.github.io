@@ -32,7 +32,7 @@ RabbitMQ支持很多协议，在这里我们将使用AMQP 0-9-1
 
 下面的connection抽象了socket连接，并为我们处理了协议转换、鉴权等。我们连接到在本地消息代理（localhost），如果你想连接到其他消息代理，可以简单的指定其他IP地址。
 
-```
+```java
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -64,7 +64,7 @@ public class Send {
 
 `DefaultConsumer`是接口`Consumer`的默认实现，它帮助缓存了从服务端发来的消息。
 
-```
+```java
 import java.io.IOException;
 
 import com.rabbitmq.client.AMQP;

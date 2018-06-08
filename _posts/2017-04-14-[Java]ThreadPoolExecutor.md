@@ -18,7 +18,7 @@ tags: JAVA
 
 Java线程池的底层都是基于ThreadPoolExecutor实现的。
 
-```
+```java
 public ThreadPoolExecutor(int corePoolSize,
                           int maximumPoolSize,
                           long keepAliveTime,
@@ -44,7 +44,7 @@ public ThreadPoolExecutor(int corePoolSize,
 
 参数介绍
 
-```
+```javadoc
 @param corePoolSize the number of threads to keep in the pool, even
        if they are idle, unless {@code allowCoreThreadTimeOut} is set
 @param maximumPoolSize the maximum number of threads to allow in the
@@ -100,7 +100,7 @@ public ThreadPoolExecutor(int corePoolSize,
 
 创建一个固定大小的线程池。当线程数达到nThreads时，其余线程会被丢入LinkedBlockingQueue。该队列默认大小是Integer.MAX\_VALUE。
 
-```
+```java
 public static ExecutorService newFixedThreadPool(int nThreads) {
         return new ThreadPoolExecutor(nThreads, nThreads,
                 0L, TimeUnit.MILLISECONDS,
@@ -112,7 +112,7 @@ public static ExecutorService newFixedThreadPool(int nThreads) {
 
 创建一个单线程的线程池。当线程数达到1时，其余线程会被丢入LinkedBlockingQueue。该队列默认大小是Integer.MAX\_VALUE。
 
-```
+```java
 public static ExecutorService newSingleThreadExecutor() {
     return new FinalizableDelegatedExecutorService
         (new ThreadPoolExecutor(1, 1,
@@ -125,7 +125,7 @@ public static ExecutorService newSingleThreadExecutor() {
 
 创建一个可缓存线程池。如果线程池的大小超过了处理任务所需要的线程，那么就会回收部分空闲的线程。当任务数增加时，此线程池又可以智能的添加新线程来处理任务。此线程池不会对线程池大小做限制，线程池大小完全依赖于操作系统（或者说JVM）能够创建的最大线程大小
 
-```
+```java
 public static ExecutorService newCachedThreadPool() {
         return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                       60L, TimeUnit.SECONDS,
@@ -137,7 +137,7 @@ public static ExecutorService newCachedThreadPool() {
 
 创建一个定长线程池，支持定时及周期性的执行任务。在ScheduledThreadPoolExecutor中工作队列类型是它的内部类DelayedWorkQueue，而DelayedWorkQueue的Task容器是DelayQueue类型，而ScheduledFutureTask作为Delay的实现类作为Runnable的封装后的Task类。也就是说ScheduledThreadPoolExecutor是通过DelayQueue优先级判定规则来执行任务的。
 
-```
+```java
 public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
         return new ScheduledThreadPoolExecutor(corePoolSize);
 }

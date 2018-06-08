@@ -29,7 +29,7 @@ tags: RabbitMQ
 
 我们先讨论fanout模式。通过以下代码申明一个fanout模式的交换机。
 
-```
+```java
 channel.exchangeDeclare("logs", "fanout");
 ```
 
@@ -39,13 +39,13 @@ RabbtiMQ会默认创建很多amq.\*的交换机和默认（unnamed）交换机�
 
 在之前的章节中，我们在发送消息时，使用了默认的交换机，即空字符串。消息通过指定的routekey被路由到相应的队列。
 
-```
+```java
 channel.basicPublish("", "hello", null, message.getBytes());
 ```
 
 现在我们可以通过指定交换机名字来发送消息了。
 
-```
+```java
 channel.basicPublish( "logs", "", null, message.getBytes());
 ```
 
@@ -61,7 +61,7 @@ channel.basicPublish( "logs", "", null, message.getBytes());
 
 在java客户端，当我们使用无参函数queuedeclare\(\)，我们创建一个非持久的，独享的，自动删除的队列：
 
-```
+```java
 String queueName = channel.queueDeclare().getQueue();
 ```
 
@@ -73,7 +73,7 @@ String queueName = channel.queueDeclare().getQueue();
 
 当我们已经创建了一个交换机和队列后，我们需要告诉交换机向哪个队列发送消息。交换机和队列之间的关系称为绑定。
 
-```
+```java
 channel.queueBind(queueName, "logs", "");
 ```
 
@@ -83,7 +83,7 @@ channel.queueBind(queueName, "logs", "");
 
 发送端把消息发送到了logs的交换机，而不是之前的默认交换机。由于交换机是fanout模式的，即使我们提供了routeKey，该值也会被直接忽略掉。
 
-```
+```java
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -131,7 +131,7 @@ public class EmitLog {
 
 接收端仍需要声明交换机，因为向一个不存在的交换机发送消息是被禁止的。如果没有队列被绑定到指定交换机，发往该交换机的消息会被丢弃掉，但是这正好满足了日志系统的需求。
 
-```
+```java
 import com.rabbitmq.client.*;
 
 import java.io.IOException;

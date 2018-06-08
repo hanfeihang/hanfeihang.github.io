@@ -223,7 +223,7 @@ Lock 和 synchronized 代码块的主要不同点：
 
 乐观锁的一种实现，通过compareAndSet来实现。
 
-```
+```java
 for (;;) {
     boolean current = get();
     if (compareAndSet(current, newValue))

@@ -48,7 +48,7 @@ topic交换机可以表现的类似于其他类型的交换机。
 
 EmitLogTopic.java
 
-```
+```java
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
@@ -116,7 +116,7 @@ public class EmitLogTopic {
 
 ReceiveLogsTopic.java
 
-```
+```java
 import com.rabbitmq.client.*;
 
 import java.io.IOException;

@@ -10,7 +10,7 @@ tags: SpringBoot
 
 Using the`@Value("${property}")`annotation to inject configuration properties can sometimes be cumbersome, especially if you are working with multiple properties or your data is hierarchical in nature. Spring Boot provides an alternative method of working with properties that allows strongly typed beans to govern and validate the configuration of your application.
 
-```
+```java
 package com.example;
 
 import java.net.InetAddress;
@@ -65,7 +65,7 @@ The POJO above defines the following properties:
 
 You also need to list the properties classes to register in the`@EnableConfigurationProperties`annotation:
 
-```
+```java
 @Configuration
 @EnableConfigurationProperties(FooProperties.class)
 public class MyConfiguration {
@@ -76,7 +76,7 @@ public class MyConfiguration {
 
 Even if the configuration above will create a regular bean for`FooProperties`, we recommend that`@ConfigurationProperties`only deal with the environment and in particular does not inject other beans from the context. Having said that, The`@EnableConfigurationProperties`annotation is\_also\_automatically applied to your project so that any\_existing\_bean annotated with`@ConfigurationProperties`will be configured from the`Environment`. You could shortcut`MyConfiguration`above by making sure`FooProperties`is already a bean:
 
-```
+```java
 @Component
 @ConfigurationProperties(prefix="foo")
 public class FooProperties {
@@ -88,7 +88,7 @@ public class FooProperties {
 
 This style of configuration works particularly well with the`SpringApplication`external YAML configuration:
 
-```
+```yaml
 # application.yml
 
 foo:
@@ -104,7 +104,7 @@ foo:
 
 To work with`@ConfigurationProperties`beans you can just inject them in the same way as any other bean.
 
-```
+```java
 @Service
 public class MyService {
 
@@ -134,7 +134,7 @@ As well as using`@ConfigurationProperties`to annotate a class, you can also use 
 
 To configure a bean from the`Environment`properties, add`@ConfigurationProperties`to its bean registration:
 
-```
+```java
 @ConfigurationProperties(prefix = "bar")
 @Bean
 public
@@ -151,7 +151,7 @@ Spring Boot uses some relaxed rules for binding`Environment`properties to`@Confi
 
 For example, given the following`@ConfigurationProperties`class:
 
-```
+```java
 @ConfigurationProperties(prefix="person")
 public class OwnerProperties {
 
@@ -189,7 +189,7 @@ Spring will attempt to coerce the external application properties to the right t
 
 Spring Boot will attempt to validate`@ConfigurationProperties`classes whenever they are annotated with Spring’s`@Validated`annotation. You can use JSR-303`javax.validation`constraint annotations directly on your configuration class. Simply ensure that a compliant JSR-303 implementation is on your classpath, then add constraint annotations to your fields:
 
-```
+```java
 @ConfigurationProperties(prefix="foo")
 @Validated
 public class FooProperties {
@@ -204,7 +204,7 @@ public class FooProperties {
 
 In order to validate values of nested properties, you must annotate the associated field as`@Valid`to trigger its validation. For example, building upon the above`FooProperties`example:
 
-```
+```java
 @ConfigurationProperties(prefix="connection")
 @Validated
 public class FooProperties {

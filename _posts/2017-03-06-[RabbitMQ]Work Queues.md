@@ -20,7 +20,7 @@ Work Queues的主要目的是避免立即执行一个资源密集型任务，并
 
 与之前发送简单的消息不同，这次我们将发送消息用于复杂任务。通过使用Thread.sleep\(\)，我们假装工作线程处于忙碌状态。每一个dot代表一秒钟的忙碌，即Hello...表示这个任务将忙碌3秒。
 
-```
+```java
 private static String getMessage(String[] strings) {
     if (strings.length < 1)
         return "Hello World!";
@@ -39,7 +39,7 @@ private static String joinStrings(String[] strings, String delimiter) {
 }
 ```
 
-```
+```java
 final Consumer consumer = new DefaultConsumer(channel) {
     @Override
     public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties,
@@ -69,7 +69,7 @@ private static void doWork(String task) throws InterruptedException {
 
 执行
 
-```
+```cmd
 shell3$ java -cp $CP NewTask
 First message.
 shell3$ java -cp $CP NewTask
@@ -84,14 +84,14 @@ Fifth message.....
 
 结果
 
-```
+```cmd
  [*] Waiting for messages. To exit press CTRL+C
  [x] Received 'First message.'
  [x] Received 'Third message...'
  [x] Received 'Fifth message.....'
 ```
 
-```
+```cmd
  [*] Waiting for messages. To exit press CTRL+C
  [x] Received 'Second message..'
  [x] Received 'Fourth message....'
@@ -109,7 +109,7 @@ Fifth message.....
 
 消息确认开关默认是打开的。在之前的例子里，我们通过`autoAck=true`显示的关闭了这个开关。是时候打开这个开关了。
 
-```
+```java
 channel.basicQos(1); // accept only one unacked message at a time (see below)
 final Consumer consumer = new DefaultConsumer(channel) {
     @Override
@@ -138,7 +138,7 @@ channel.basicConsume(TASK_QUEUE_NAME, autoAck, consumer);
 
 第一步，队列持久化。
 
-```
+```java
 boolean durable = true;
 channel.queueDeclare("hello", durable, false, false, null);
 ```
@@ -147,7 +147,7 @@ channel.queueDeclare("hello", durable, false, false, null);
 
 第二步，消息持久化。
 
-```
+```java
 import com.rabbitmq.client.MessageProperties;
 
 channel.basicPublish("", "task_queue",
@@ -169,7 +169,7 @@ channel.basicPublish("", "task_queue",
 
 通过设置`basicQos`的属性prefetchCount=1，RabbitMQ不会同时向一个消费者分发多余一条的消息，即RabbitMQ不会向消费者分发消息，直到前面一条消息被处理掉并收到ACK消息。相反，它会把消息分发给不繁忙的消费者。
 
-```
+```java
 int prefetchCount = 1;
 channel.basicQos(prefetchCount);
 ```
@@ -178,7 +178,7 @@ channel.basicQos(prefetchCount);
 
 NewWork.java
 
-```
+```java
 import java.util.concurrent.TimeoutException;
 
 import com.rabbitmq.client.Channel;
@@ -228,7 +228,7 @@ public class NewTask {
 
 Worker.java
 
-```
+```java
 import java.io.IOException;
 
 import com.rabbitmq.client.AMQP;

@@ -12,7 +12,7 @@ tags: JAVA
 
 # 懒汉式单例
 
-```
+```java
 public class LazySingleton {
 
     private LazySingleton() {
@@ -34,7 +34,7 @@ LazySingleton通过把构造函数限定为private避免类在外部被实例化
 
 * 事实上，Java反射机制可以实例化构造方法为private的类。
 
-```
+```java
 import java.lang.reflect.Constructor;
 
 public class ReflectSingleton {
@@ -59,7 +59,7 @@ public class ReflectSingleton {
 
 使用synchronized关键字，锁定的是整个类对象，会对性能造成较大的影响。
 
-```
+```java
 public class DoubleCheckSingleton {
 
     private DoubleCheckSingleton() {
@@ -113,7 +113,7 @@ public class DoubleCheckSingleton {
 
 # 静态（类级）内部类
 
-```
+```java
 public class StaticInnerClassSingleton {
 
     private StaticInnerClassSingleton() {
@@ -136,7 +136,7 @@ public class StaticInnerClassSingleton {
 
 # 饿汉式单例
 
-```
+```java
 public class EagerSingleton {
 
     private static EagerSingleton singleton = new EagerSingleton();
@@ -155,7 +155,7 @@ public class EagerSingleton {
 
 # 枚举
 
-```
+```java
 public enum SingletonEnum {
 
     INSTANCE;

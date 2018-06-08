@@ -16,7 +16,7 @@ tags: RabbitMQ
 
 RPC服务暴露一个叫call\(\)的方法。
 
-```
+```java
 FibonacciRpcClient fibonacciRpc = new FibonacciRpcClient();   
 String result = fibonacciRpc.call("4");
 System.out.println( "fib(4) is " + result);
@@ -26,7 +26,7 @@ System.out.println( "fib(4) is " + result);
 
 使用RabbtiMQ进行RPC调用是相当简单的。客户端发送一个请求消息，服务端返回一个响应消息。为了能收到响应消息，我们需要在发送请求时携带一个callback队列地址。
 
-```
+```java
 callbackQueueName = channel.queueDeclare().getQueue();
 
 BasicProperties props = new BasicProperties
@@ -70,7 +70,7 @@ RPC模式流程：
 
 斐波那契数列函数
 
-```
+```java
 private static int fib(int n) {
     if (n == 0) return 0;
     if (n == 1) return 1;
@@ -80,7 +80,7 @@ private static int fib(int n) {
 
 RPCServer.java
 
-```
+```java
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
@@ -168,7 +168,7 @@ public class RPCServer {
 
 RPCClient.java
 
-```
+```java
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;

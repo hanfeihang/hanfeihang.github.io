@@ -34,7 +34,7 @@ MyBatis框架提供的动态SQL功能允许用户根据输入条件自行拼接S
 
 比如想根据用户名字、用户类型，搜索匹配的用户列表，其中用户名字是模糊匹配。
 
-```
+```xml
 <select id="getPage" resultMap="userResult">
     select * from co_user
     <where>
@@ -81,7 +81,7 @@ MyBatis默认为我们实现了许多TypeHandler , 当我们没有配置指定Ty
 
 1）实现一个专门用于转义的TypeHandler
 
-```
+```java
 @MappedJdbcTypes(JdbcType.VARCHAR)
 public class WildcardTypeHandler extends BaseTypeHandler<String> {
 
@@ -110,7 +110,7 @@ public class WildcardTypeHandler extends BaseTypeHandler<String> {
 }
 ```
 
-```
+```java
 public class SqlUtil {
 
     private static final String ESCAPE_CHAR = "\\";
@@ -148,7 +148,7 @@ public class SqlUtil {
 
 2）对需要转义的参数配置TypeHandler
 
-```
+```xml
 <if test="userName != null">
     user_name like CONCAT('%',#{userName, typeHandler=com.hikvision.building.common.MyBatis.WildcardTypeHandler},'%')
 </if>

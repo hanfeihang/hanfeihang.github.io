@@ -117,7 +117,7 @@ Paxos把这样的请求称为编号为n的prepare请求。
 
 伪代码如下：
 
-```
+```c
 Proposer_Send_Prepare()
 {
     select a proposal id n;

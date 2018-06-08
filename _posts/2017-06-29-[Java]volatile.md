@@ -15,7 +15,7 @@ tags: JAVA
 
 以下例子可说明这问题。
 
-```
+```java
 public class Demo {
     private static boolean stop;
 
@@ -46,7 +46,7 @@ public class Demo {
 
 我们预期程序会在3s后停止，但是实际上它会一直执行下去（不一定，实际上和虚拟机的实现有关），原因是虚拟机对代码进行了指令重排序和优化，优化后如下：
 
-```
+```java
 if (!stop)
 while(true) {
 ...

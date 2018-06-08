@@ -14,13 +14,13 @@ tags: RabbitMQ
 
 绑定是指交换机和队列之间的联系。简而言之，就是指队列对某个交换机的消息感兴趣。
 
-```
+```java
 channel.queueBind(queueName, EXCHANGE_NAME, "");
 ```
 
 我们可以对绑定设置第三个参数`routingKey`。
 
-```
+```java
 channel.queueBind(queueName, EXCHANGE_NAME, "black");
 ```
 
@@ -48,7 +48,7 @@ channel.queueBind(queueName, EXCHANGE_NAME, "black");
 
 我们使用direct交换机来实现日志系统，把日志级别作为routingKey，那么消费者可以有选择的进行日志的接受。
 
-```
+```java
 channel.exchangeDeclare(EXCHANGE_NAME, "direct");
 channel.basicPublish(EXCHANGE_NAME, severity, null, message.getBytes());
 ```
@@ -59,7 +59,7 @@ channel.basicPublish(EXCHANGE_NAME, severity, null, message.getBytes());
 
 我们将基于日志级别severity进行队列的绑定。
 
-```
+```java
 String queueName = channel.queueDeclare().getQueue();
 
 for(String severity : argv){    
@@ -73,7 +73,7 @@ for(String severity : argv){
 
 EmitLogDirect.java
 
-```
+```java
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
@@ -130,7 +130,7 @@ public class EmitLogDirect {
 
 ReceiveLogsDirect.java
 
-```
+```java
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
