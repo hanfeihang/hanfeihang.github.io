@@ -25,44 +25,34 @@ BlockingQueue通常用于一个线程生产对象，而另外一个线程消费�
 
 * ArrayBlockingQueue
 
-```
 有界阻塞队列。
 初始化需要传入大小。基于数组实现，具有数组的特性：一旦初始化，无法修改大小。
 FIFO
-```
 
 * DelayQueue
 
-```
 无界阻塞队列。
 对元素进行持有直到一个特定的延迟到期。注入其中的元素必须实现 java.util.concurrent.Delayed 接口。
 只有在延迟期满时才能从中提取元素。
-```
 
 * LinkedBlockingQueue
 
-```
 链式结构。
 可定义大小；也可不定义，此时使用 Integer.MAX_VALUE 作为上限。
 FIFO
-```
 
 * PriorityBlockingQueue
 
-```
 带优先级的队列，元素按优先级消费；如果优先级相等，队列不做任何特定行为。
 无界。
 元素需要实现java.lang.Comparable 接口。
 基于堆数据结构。
-```
 
 * SynchronousQueue
 
-```
 同时只能够容纳单个元素。
 如果该队列已有一元素的话，试图向队列中插入一个新元素的线程将会阻塞，直到另一个线程将该元素从队列中抽走。
 同样，如果该队列为空，试图向队列中抽取一个元素的线程将会阻塞，直到另一个线程向队列中插入了一条新的元素。
-```
 
 # BlockingDeque
 
@@ -76,10 +66,8 @@ BlockingDeque继承BlockingQueque接口。这就意味着你可以像使用一�
 
 * LinkedBlockingDeque
 
-```
 双端队列。
 在它为空的时候，一个试图从中抽取数据的线程将会阻塞，无论该线程是试图从哪一端抽取数据。
-```
 
 # ConcurrentMap
 
@@ -89,17 +77,13 @@ ConcurrentMap接口表示了一个能够对别人的访问\(插入和提取\)进
 
 * ConcurrentHashMap
 
-```
 基于锁分离技术，整个ConcurrentHashMap被分成多个seg。当写入Map时，只会锁住当前key所在的seg。
 ConcurrentHashMap中的每一个seg和HashTable类很相似。
-```
 
 * ConcurrentNavigableMap
 
-```
 一个支持并发访问的 java.util.NavigableMap。
 它还能让它的子map具备并发访问的能力。所谓的 "子map" 指的是诸如 headMap()，subMap()，tailMap() 之类的方法返回的 map。
-```
 
 # CountDownLatch
 
@@ -172,11 +156,9 @@ ExecutorService接口定义了以下几个方法：
 
 * ThreadPoolExecutor
 
-```
 关键属性corePoolSize/maxPoolSize
 当一个任务委托给线程池时，如果池中线程数量低于 corePoolSize，一个新的线程将被创建，即使池中可能尚有空闲线程。
 如果内部任务队列已满，而且有至少 corePoolSize 正在运行，但是运行线程的数量低于 maximumPoolSize，一个新的线程将被创建去执行该任务。
-```
 
 # ScheduledExecutorService
 
@@ -213,11 +195,9 @@ Lock 和 synchronized 代码块的主要不同点：
 * ReentrantLock：可重入锁
 * ReadWriteLock：读写锁
 
-```
 加读锁前提：如果没有任何写操作线程锁定 ReadWriteLock，并且没有任何写操作线程要求一个写锁(但还没有获得该锁)。
            因此，可以有多个读操作线程对该锁进行锁定。
 加写锁前提：如果没有任何读操作或者写操作。因此，在写操作的时候，只能有一个线程对该锁进行锁定。
-```
 
 # 原子量
 
