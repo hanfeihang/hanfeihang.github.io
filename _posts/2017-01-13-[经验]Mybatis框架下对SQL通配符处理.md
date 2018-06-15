@@ -123,11 +123,8 @@ public class SqlUtil {
      * 请注意，下面这种替换方式，只支持preparedstatement，即对应#{},而无法支持${}
      * 
      * @author hanfeihang 2016年8月3日 上午10:48:50
-     * @param str
-     * @return
-     * @modificationHistory=========================逻辑或功能性重大变更记录
-     * @modify by user: {修改人} 2016年8月3日
-     * @modify by reason:{原因}
+     * @param str 转义前的字符串
+     * @return 转义后的字符串
      */
     public static String repalceWildcard(String str) {
         String result = null;
