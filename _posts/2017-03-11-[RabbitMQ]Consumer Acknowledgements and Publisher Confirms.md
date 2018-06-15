@@ -60,9 +60,7 @@ ack简单的通知RabbitMQ一个消息被投递了。使用basic.reject进行nac
 
 一旦通道处于confirm模式下，broker和客户端都会对消息计数（在第一个confirm.select调用后，从1开始计数）。broker在处理消息后，通过在同一个channel中发送basic.ack来确认消息。basic.ack的delivery-tag域包含了此次确认的消息的序列号。broker也可以设置basic.ack中的multiple域，表明到这个序列号为止的消息（包含此序列号）都已经被处理。
 
-```
 Java中发送confirm.select的方法是channel.confirmSelect()，等待ack返回的方法是：channel.waitForConfirmsOrDie();
-```
 
 Java例子参考[这里](http://hg.rabbitmq.com/rabbitmq-java-client/file/default/test/src/com/rabbitmq/examples/ConfirmDontLoseMessages.java)。
 
