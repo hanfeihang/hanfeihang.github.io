@@ -39,7 +39,7 @@ MyBatis框架提供的动态SQL功能允许用户根据输入条件自行拼接S
     select * from co_user
     <where>
         <if test="userName != null">
-            user_name like CONCAT('%',#{userName},'%')
+            user_name like CONCAT(#{userName},'%')
         </if>
         <if test="userType != null">
             and user_type = #{userType}
@@ -147,7 +147,7 @@ public class SqlUtil {
 
 ```xml
 <if test="userName != null">
-    user_name like CONCAT('%',#{userName, typeHandler=com.hikvision.building.common.MyBatis.WildcardTypeHandler},'%')
+    user_name like CONCAT(#{userName, typeHandler=com.hikvision.building.common.MyBatis.WildcardTypeHandler},'%')
 </if>
 ```
 
