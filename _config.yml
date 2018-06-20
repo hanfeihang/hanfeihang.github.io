@@ -1,6 +1,6 @@
 # Site settings 配置站点
 title: "Feihang Han's Space"
-description: '后端开发者，热爱编程、游戏、篮球。很高兴能在这里与你分享。'
+description: '一个后端开发者的全栈之路。'
 keyword: ''
 url: 'http://hanfeihang.github.io' # your host
 
@@ -20,7 +20,7 @@ footer:
 # Author 配置博主信息
 author: 'Feihang Han'
 nickname: ''
-bio: '程序员'
+bio: '一个走在全栈路上的后端程序员'
 avatar: '/assets/img/profile.png'
 
 # Search
