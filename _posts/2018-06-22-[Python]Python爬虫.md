@@ -1,9 +1,9 @@
 ---
 layout: post
-title: '脚本爬虫'
+title: 'Python爬虫'
 date: 2018-06-22
 author: Feihang Han
-tags: 实战
+tags: Python
 ---
 
 脚本和插件往往能提升工作效率，减少重复性工作。
@@ -123,10 +123,10 @@ if __name__ == '__main__':
     if len(args) > 1:
         APP_NAME = args[1]
     print(APP_NAME)
-    COOKIE = get_cookie()
-    order_ids = get_change_orders()
-    for order_id in order_ids[:3]:
-        get_order_detail(order_id)
+    COOKIE = get_cookie() // 获取cookie
+    order_ids = get_change_orders() // 查询申请记录
+    for order_id in order_ids[:3]: 
+        get_order_detail(order_id) // 根据记录id查询端口信息
 
 ```
 
