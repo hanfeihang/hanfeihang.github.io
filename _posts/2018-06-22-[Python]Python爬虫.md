@@ -24,7 +24,7 @@ tags: Python
 
 # 思路
 
-通过selenium模拟chrome的打开，根据浏览器证书会自动登陆，在这个过程中可以拿到cookie。一旦拿到cookie后，后续问题就引刃而解了。
+通过selenium模拟chrome的打开，选择浏览器证书后会自动登陆，在这个过程中可以拿到cookie。一旦拿到cookie后，后续问题就引刃而解了。
 
 ```python
 def get_cookie():
