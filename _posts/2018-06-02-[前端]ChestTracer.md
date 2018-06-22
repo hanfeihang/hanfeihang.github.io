@@ -3,7 +3,7 @@ layout: post
 title: '微信小程序Chest Tracer'
 date: 2018-06-02
 author: Feihang Han
-tags: 微信小程序
+tags: 前端
 ---
 
 这是个人开发的一款微信小程序，能帮助Clash Royale玩家提前知道接下来的宝箱序列。
