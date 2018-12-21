@@ -3,7 +3,7 @@ layout: post
 title: 'MyBatis的SQL通配符'
 date: 2017-01-13
 author: Feihang Han
-tags: MyBatis
+tags: MyBatis 实践
 ---
 
 # 案例描述

@@ -3,7 +3,7 @@ layout: post
 title: 'Python爬虫'
 date: 2018-04-16
 author: Feihang Han
-tags: Python
+tags: Python 实践
 ---
 
 脚本和插件往往能提升工作效率，减少重复性工作。
